@@ -44,7 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // ─── (ROI section is now a static snapshot — no JS needed) ──
+  // ─── Tech Specs Accordion ──────────────────────────────
+  const techSpecs = document.getElementById('techSpecs');
+  const techSpecsToggle = document.getElementById('techSpecsToggle');
+
+  if (techSpecsToggle) {
+    techSpecsToggle.addEventListener('click', () => {
+      const isActive = techSpecs.classList.contains('active');
+      techSpecs.classList.toggle('active', !isActive);
+      techSpecsToggle.setAttribute('aria-expanded', !isActive);
+    });
+  }
 
   // ─── FAQ Accordion ──────────────────────────────────────
   const faqItems = document.querySelectorAll('.faq-item');

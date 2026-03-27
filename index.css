@@ -365,6 +365,62 @@ section {
   animation: fadeUp 0.8s 0.8s forwards;
 }
 
+/* Lead Magnet CTA */
+.hero-lead-magnet {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  transition: border-color var(--transition-base), background var(--transition-base);
+  text-decoration: none;
+  max-width: 440px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
+}
+
+.hero-lead-magnet:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-card-hover);
+}
+
+.lead-magnet-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.lead-magnet-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lead-magnet-text strong {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lead-magnet-text small {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.lead-magnet-arrow {
+  margin-left: auto;
+  color: var(--accent-secondary);
+  font-size: var(--text-lg);
+  transition: transform var(--transition-fast);
+}
+
+.hero-lead-magnet:hover .lead-magnet-arrow {
+  transform: translateX(3px);
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -564,6 +620,93 @@ section {
   color: var(--text-secondary);
   font-size: var(--text-sm);
   line-height: 1.6;
+}
+
+/* Technical Specs Accordion */
+.tech-specs {
+  margin-top: var(--space-2xl);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.tech-specs.active {
+  border-color: var(--accent-primary);
+}
+
+.tech-specs-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-glass);
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.tech-specs-toggle:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.tech-specs-toggle .icon {
+  font-size: var(--text-lg);
+  color: var(--accent-secondary);
+  transition: transform var(--transition-base);
+}
+
+.tech-specs.active .tech-specs-toggle .icon {
+  transform: rotate(45deg);
+}
+
+.tech-specs-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-specs.active .tech-specs-panel {
+  max-height: 400px;
+}
+
+.tech-specs-content {
+  padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table td {
+  padding: var(--space-sm) 0;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  width: 35%;
+  white-space: nowrap;
+  padding-right: var(--space-lg) !important;
+}
+
+.spec-value {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs) !important;
 }
 
 /* --- Section 4: Economics --- */
